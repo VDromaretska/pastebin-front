@@ -7,9 +7,10 @@ interface RecentPasteListProps {
 export function RecentPasteList({
     pasteList,
 }: RecentPasteListProps): JSX.Element {
+    const lastTenPastes = pasteList.slice(-10).reverse();
     return (
         <div>
-            {pasteList.map((pasteItem) => (
+            {lastTenPastes.map((pasteItem) => (
                 <PasteView pasteItem={pasteItem} key={pasteItem.id} />
             ))}
         </div>
