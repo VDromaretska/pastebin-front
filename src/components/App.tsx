@@ -10,7 +10,7 @@ const baseUrl =
         ? "https://pastebin-upf5.onrender.com"
         : "http://localhost:4000";
 
-interface PasteItem {
+export interface PasteItem {
     id: number;
     title: string;
     description: string;
@@ -36,7 +36,7 @@ function App() {
         <div className="App">
             <Header />
             <NewPaste />
-            <RecentPasteList />
+            <RecentPasteList pasteList={pasteList} />
         </div>
     );
 }
