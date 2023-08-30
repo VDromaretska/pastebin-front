@@ -1,16 +1,16 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import { Header } from "./Header";
-import { NewPaste } from "./NewPaste";
+import { NewPasteView } from "./NewPasteView";
 import { RecentPasteList } from "./RecentPasteList";
 import axios from "axios";
 
-const baseUrl = "https://pastebin-upf5.onrender.com";
-// process.env.NODE_ENV === "production"
-//     ? "https://pastebin-upf5.onrender.com"
-//     : "http://localhost:4000";
+export const baseUrl =
+    process.env.NODE_ENV === "production"
+        ? "https://pastebin-upf5.onrender.com"
+        : "http://localhost:4000";
 
-interface PasteItem {
+export interface PasteItem {
     id: number;
     title: string;
     description: string;
@@ -25,7 +25,6 @@ function App() {
     async function fetchAndStorePastes() {
         try {
             const response = await axios.get(baseUrl + "/pastes");
-            console.log(response.data, response.status);
             const responseData: PasteItem[] = response.data;
             setPasteList(responseData);
         } catch (error) {
@@ -35,8 +34,8 @@ function App() {
     return (
         <div className="App">
             <Header />
-            <NewPaste />
-            <RecentPasteList />
+            <NewPasteView fetchAndStorePastes={fetchAndStorePastes} />
+            <RecentPasteList pasteList={pasteList} />
         </div>
     );
 }
