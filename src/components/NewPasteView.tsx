@@ -31,22 +31,26 @@ export function NewPasteView({
     return (
         <div>
             <input
-                placeholder="Title input.."
+                placeholder="Enter a title"
                 onChange={(e) => {
                     setNewPaste((prev) => ({ ...prev, title: e.target.value }));
                 }}
                 value={newPaste.title}
             />
-            <input
-                placeholder="Body"
+            <br />
+            <textarea
+                placeholder="Enter a description"
                 onChange={(e) => {
                     setNewPaste((prev) => ({
                         ...prev,
                         description: e.target.value,
                     }));
                 }}
-                value={newPaste.description}
-            />
+                rows={15}
+                cols={80}
+            >
+                {newPaste.description}
+            </textarea>
             {newPaste.description !== "" && (
                 <button onClick={handleSubmit}>Submit</button>
             )}
