@@ -5,10 +5,10 @@ import { NewPaste } from "./NewPaste";
 import { RecentPasteList } from "./RecentPasteList";
 import axios from "axios";
 
-const baseUrl = "https://pastebin-upf5.onrender.com";
-// process.env.NODE_ENV === "production"
-//     ? "https://pastebin-upf5.onrender.com"
-//     : "http://localhost:4000";
+const baseUrl =
+    process.env.NODE_ENV === "production"
+        ? "https://pastebin-upf5.onrender.com"
+        : "http://localhost:4000";
 
 interface PasteItem {
     id: number;
