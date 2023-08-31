@@ -48,9 +48,9 @@ export function NewPasteView({
                 }}
                 rows={15}
                 cols={80}
-            >
-                {newPaste.description}
-            </textarea>
+                value={newPaste.description}
+            />
+
             {newPaste.description !== "" && (
                 <button onClick={handleSubmit}>Submit</button>
             )}
