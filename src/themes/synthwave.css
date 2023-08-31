@@ -1,0 +1,9 @@
+@import "daisyui/dist/full.css"; /* Import DaisyUI styles */
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+/* Apply the theme class to the body or a root container */
+.theme-synthwave {
+    @apply theme-synthwave;
+}

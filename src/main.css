@@ -1,2 +1,7 @@
 /* main.css */
 /* This file can be empty or contain custom styles if needed */
+/* // main.css */
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+@import "./themes/synthwave.css";
