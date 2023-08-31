@@ -6,3 +6,8 @@
     -webkit-line-clamp: 5;
     -webkit-box-orient: vertical;
 }
+
+.paste-view {
+    border: 1px solid black;
+    margin: 5px;
+}
