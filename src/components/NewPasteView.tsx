@@ -39,6 +39,7 @@ export function NewPasteView({
             />
             <br />
             <textarea
+                value={newPaste.description}
                 placeholder="Enter a description"
                 onChange={(e) => {
                     setNewPaste((prev) => ({
@@ -48,9 +49,8 @@ export function NewPasteView({
                 }}
                 rows={15}
                 cols={80}
-            >
-                {newPaste.description}
-            </textarea>
+            />
+
             {newPaste.description !== "" && (
                 <button onClick={handleSubmit}>Submit</button>
             )}
