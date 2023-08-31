@@ -6,6 +6,7 @@ import { PasteItem, baseUrl } from "./App";
 import "./pasteView.css";
 import axios from "axios";
 import { CommentView } from "./CommentView";
+import { NewCommentView } from "./NewCommentView";
 
 interface PasteViewProps {
     pasteItem: PasteItem;
@@ -58,6 +59,10 @@ export function PasteView({ pasteItem }: PasteViewProps): JSX.Element {
                             fetchAndStoreComments={fetchAndStoreComments}
                         />
                     ))}
+                    <NewCommentView
+                        pasteId={pasteId}
+                        fetchAndStoreComments={fetchAndStoreComments}
+                    />
                 </div>
             )}
         </div>
