@@ -39,32 +39,34 @@ export function PasteView({ pasteItem }: PasteViewProps): JSX.Element {
 
     return (
         <div className="paste-view">
-            <h2>{pasteItem.title}</h2>
-            <div className="summary-container">
-                {!isDescriptionClicked && (
-                    <p onClick={handleDescriptionClick}>
-                        {pasteItem.description}
-                    </p>
-                )}
-            </div>
-            {isDescriptionClicked && (
-                <div>
-                    <p onClick={handleDescriptionClick}>
-                        {pasteItem.description}
-                    </p>
-                    {allComments.map((comment) => (
-                        <CommentView
-                            key={comment.id}
-                            commentItem={comment}
+            <h2 className="paste-title">{pasteItem.title}</h2>
+            <div className="paste-description-container">
+                <div className="short-description">
+                    {!isDescriptionClicked && (
+                        <p onClick={handleDescriptionClick}>
+                            {pasteItem.description}
+                        </p>
+                    )}
+                </div>
+                {isDescriptionClicked && (
+                    <div className="full-description">
+                        <p onClick={handleDescriptionClick}>
+                            {pasteItem.description}
+                        </p>
+                        {allComments.map((comment) => (
+                            <CommentView
+                                key={comment.id}
+                                commentItem={comment}
+                                fetchAndStoreComments={fetchAndStoreComments}
+                            />
+                        ))}
+                        <NewCommentView
+                            pasteId={pasteId}
                             fetchAndStoreComments={fetchAndStoreComments}
                         />
-                    ))}
-                    <NewCommentView
-                        pasteId={pasteId}
-                        fetchAndStoreComments={fetchAndStoreComments}
-                    />
-                </div>
-            )}
+                    </div>
+                )}
+            </div>
         </div>
     );
 }
