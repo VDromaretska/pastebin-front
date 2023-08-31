@@ -1,7 +1,5 @@
+import "./header.css";
+
 export function Header(): JSX.Element {
-    return (
-        <div>
-            <h1>Welcome to Pastebin App!</h1>
-        </div>
-    );
+    return <header>Welcome to Pastebin App!</header>;
 }

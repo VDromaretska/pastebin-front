@@ -1,3 +1,14 @@
+* {
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+        sans-serif;
+}
+
+:root {
+    --primary-col: hsla(310, 90%, 12%, 0.75);
+    --secondary-col: hsl(200, 100%, 90%);
+}
+
 html {
-    background: #f8f8f8;
+    background: var(--primary-col);
+    color: var(--secondary-col);
 }
