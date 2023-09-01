@@ -1,6 +1,8 @@
 import axios from "axios";
 import { useState } from "react";
 import { baseUrl } from "./App";
+import "./newPasteView.css";
+
 export interface NewPaste {
     title?: string;
     description: string;
@@ -29,13 +31,14 @@ export function NewPasteView({
         }
     }
     return (
-        <div>
+        <div className="new-paste-container">
             <input
                 placeholder="Enter a title"
                 onChange={(e) => {
                     setNewPaste((prev) => ({ ...prev, title: e.target.value }));
                 }}
                 value={newPaste.title}
+                className="new-title-input"
             />
             <br />
             <textarea
@@ -49,11 +52,16 @@ export function NewPasteView({
                 rows={15}
                 cols={80}
                 value={newPaste.description}
+                className="new-title-description"
             />
 
-            {newPaste.description !== "" && (
-                <button onClick={handleSubmit}>Submit</button>
-            )}
+            <button
+                disabled={newPaste.description.trim() === ""}
+                className="new-paste-submit-btn"
+                onClick={handleSubmit}
+            >
+                Submit
+            </button>
         </div>
     );
 }

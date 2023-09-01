@@ -1,13 +1,27 @@
-.summary-container {
+.paste-view {
+    border: 2px solid hsl(200, 100%, 90%);
+    border-radius: 10px;
+    margin: 5px;
+}
+
+.paste-title,
+.paste-description-container {
+    margin-left: 10px;
+}
+
+.paste-title {
+    font-size: xx-large;
+}
+
+.paste-description-container {
+    font-size: medium;
+}
+
+.short-description {
     max-height: 7em;
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
     -webkit-line-clamp: 5;
     -webkit-box-orient: vertical;
-}
-
-.paste-view {
-    border: 1px solid black;
-    margin: 5px;
 }
