@@ -1,0 +1,26 @@
+.new-paste-container {
+    display: flex;
+    flex-direction: column;
+    width: 95w;
+    justify-content: center;
+    align-items: center;
+}
+
+.new-title-input,
+.new-title-description,
+.new-paste-submit-btn {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    width: 70%;
+    padding: 10px;
+    font-size: larger;
+}
+
+.new-paste-submit-btn {
+    width: 100px;
+}
+
+.new-paste-submit-btn:hover {
+    cursor: pointer;
+}
